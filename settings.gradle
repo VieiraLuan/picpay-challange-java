@@ -1,0 +1,7 @@
+rootProject.name = 'picpay-challenge'
+include ':usecase', ':core'
+include 'core'
+include 'infrastructure'
+include 'application'
+include 'usecase'
+
