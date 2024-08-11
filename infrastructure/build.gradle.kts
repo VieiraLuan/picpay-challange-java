@@ -1,0 +1,22 @@
+plugins {
+    id("java")
+}
+
+group = "com.picpay"
+version = "0.0.1-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(":core"))
+    implementation(project(":usecase"))
+    implementation(project(":application"))
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}

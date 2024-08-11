@@ -26,11 +26,11 @@ public class TransactionPin {
         this.updatedAt = updatedAt;
     }
 
-    public TransactionPin(User user, String pin, int attempt, boolean blocked) {
+    public TransactionPin(User user, String pin) throws TransactionPinExpection {
         this.user = user;
-        this.pin = pin;
-        this.attempt = attempt;
-        this.blocked = blocked;
+        this.setPin(pin);
+        this.attempt = 3;
+        this.blocked = false;
         this.createdAt = LocalDateTime.now();
     }
 
@@ -39,7 +39,7 @@ public class TransactionPin {
 
     private void isValid(String pin) throws TransactionPinExpection {
         if (pin.length() != 8)
-            throw new TransactionPinExpection(ErrorCodeEnum.ONl0002.getMessage(), ErrorCodeEnum.ONl0002.getMessage());
+            throw new TransactionPinExpection(ErrorCodeEnum.ON0002.getMessage(), ErrorCodeEnum.ON0002.getMessage());
     }
 
     public long getId() {

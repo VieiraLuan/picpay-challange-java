@@ -18,7 +18,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(Wallet fromWallet, Wallet toWallet, BigDecimal value, TransactionStatusEnum status, LocalDateTime createdAt) {
+    public Transaction(Wallet fromWallet, Wallet toWallet, BigDecimal value) {
         this.fromWallet = fromWallet;
         this.toWallet = toWallet;
         this.value = value;
